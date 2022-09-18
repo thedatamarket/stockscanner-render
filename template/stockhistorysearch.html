@@ -1,0 +1,34 @@
+{% block title %}
+<h1>Stock History</h1>
+<p><a href="https://indianstockscanner-pre.herokuapp.com/custom/analysis/HINDUNILVR/1y/1mo">Sample</a></p>
+{% endblock %}
+
+{% block content %}
+<form action="#" method="post">
+	<p>CompanyTicker: <input type="text" name="ticker" required /></p>
+    <p>Period: 
+	<select name="period">
+		<option value="1d">1d</option>
+		<option value="5d">5d</option>
+		<option value="1mo">1mo</option>
+		<option value="3mo">3mo</option>
+		<option value="6mo">6mo</option>
+		<option value="1y">1y</option>
+		<option value="2y">2y</option>
+		<option value="5y">5y</option>
+		<option value="10y">10y</option>
+		<option value="ytd">ytd</option>
+		<option value="max">max</option>
+	</select></p></p>
+    <p>interval: 
+	<select name="interval">
+		<option value="1h">1h</option>
+		<option value="1d">1d</option>
+		<option value="5d">5d</option>
+		<option value="1wk">1wk</option>
+		<option value="1mo">1mo</option>
+		<option value="3mo">3mo</option>
+	</select></p>
+	<p><input type="submit" value="submit"/></p>
+</form>
+{% endblock %}

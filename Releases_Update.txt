@@ -1,0 +1,8 @@
+Releases Update:
+
+#Google Trends API Integration
+#TwitterTrends with Volume
+#BllombergNews,
+#twitter tweets api integration
+#News api integration
+#Shortening lines using single function different action

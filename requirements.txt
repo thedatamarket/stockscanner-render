@@ -1,0 +1,16 @@
+beautifulsoup4==4.10.0
+bs4==0.0.1
+Flask==2.0.3
+Flask-Excel==0.0.7
+gunicorn==20.1.0
+idna==2.8
+itsdangerous==2.1.0
+Jinja2==3.0.3
+lml==0.1.0
+lxml==4.8.0
+urllib3==1.25.11
+Werkzeug==2.0.3
+dropbox==11.24.0
+requests==2.26.0
+yfinance==0.1.70
+snscrape
