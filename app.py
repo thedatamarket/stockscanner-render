@@ -260,7 +260,7 @@ def liststockchange():
 def StockData1(name):
     # df = pd.read_csv(r'C:\Users\tanmo\Desktop\flaskProject\webPage\Output\stock_15032022.csv')
     dbx = dropbox.Dropbox("NVwGrPvFLxgAAAAAAAAAAVUBiyewqJ5KTDlXkSBRNBBsH2-aZ9iKQvRkP1bIDy_G")
-    query_list = 'https://indianstockscanner-pre.herokuapp.com//stockchange'
+    query_list = 'https://stockscanner.onrender.com//stockchange'
     dropbox_path= "/StockPriceDayChange/" + str(name)
     result = dbx.files_get_temporary_link(dropbox_path)
     print(result.link)
@@ -316,7 +316,7 @@ def sector():
 
 @app.route('/custom/analysis/<name>/<period>/<interval>') 
 def analysis(name,period,interval):
-    query_list = 'https://indianstockscanner-pre.herokuapp.com/custom/analysis/' + str(name) + '/'+ str(period) + '/' + str(interval) +'/csv'
+    query_list = 'https://stockscanner.onrender.com/custom/analysis/' + str(name) + '/'+ str(period) + '/' + str(interval) +'/csv'
     nameNS = name + '.NS'
     df = yf.download(tickers=nameNS, period=period, interval=interval)
     df[interval] = df['Close'].pct_change()*100
@@ -343,7 +343,7 @@ def csv(name,period,interval):
 # TWITTER SEARCH FUNCTIONALITY
 @app.route('/tweet/<id>/<count>') 
 def tweet(id,count):
-    query_list = 'https://indianstockscanner-pre.herokuapp.com/tweet/' + str(id) + '/'+ str(count) + '/csv'
+    query_list = 'https://stockscanner.onrender.com/tweet/' + str(id) + '/'+ str(count) + '/csv'
     query = "(from:"+str(id)+")"
     tweets = []
     limit = int(count)
@@ -412,7 +412,7 @@ def stockhistory():
 # STOCK INFO FUNCTIONALITY
 @app.route('/info/<stock>') 
 def info(stock):
-    query_list = 'https://indianstockscanner-pre.herokuapp.com/info/' + str(stock) + '/csv'
+    query_list = 'https://stockscanner.onrender.com/info/' + str(stock) + '/csv'
     tik = stock + '.NS'
     df = yf.Ticker(tik)
     temp = pd.DataFrame.from_dict(df.info, orient="index")
@@ -445,7 +445,7 @@ def stockinfocsv(stock):
 # API Integration
 @app.route('/api/custom/analysis/<name>/<period>/<interval>') 
 def analysisapi(name,period,interval):
-    query_list = 'https://indianstockscanner-pre.herokuapp.com/custom/analysis/' + str(name) + '/'+ str(period) + '/' + str(interval) +'/csv'
+    query_list = 'https://stockscanner.onrender.com/custom/analysis/' + str(name) + '/'+ str(period) + '/' + str(interval) +'/csv'
     nameNS = name + '.NS'
     df = yf.download(tickers=nameNS, period=period, interval=interval)
     df[interval] = df['Close'].pct_change()*100
@@ -457,7 +457,7 @@ def analysisapi(name,period,interval):
     # return df.to_html()
 
 #MMI
-@app.route('/mmi') # https://indianstockscanner-pre.herokuapp.com/mmi
+@app.route('/mmi') # https://stockscanner.onrender.com/mmi
 def mmi():
     URL = 'https://www.tickertape.in/market-mood-index'
     HEADERS = ({'User-Agent':
